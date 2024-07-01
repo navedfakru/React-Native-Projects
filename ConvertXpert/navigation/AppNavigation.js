@@ -11,7 +11,7 @@ const AppNavigation = () => {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name='Home' options={{ headerShown: false }} component={HomeSreen} />
-        <Stack.Screen name='Currency' options={{ headerShown: false }} component={CurrencyScreen} />
+        <Stack.Screen name='Currency' options={{ headerShown: true }} component={CurrencyScreen} />
         <Stack.Screen name='Area' options={{ headerShown: true }} component={AreaScreen} />
         <Stack.Screen name='Length' options={{ headerShown: true }} component={LenghtScreen} />
         <Stack.Screen name='Power' options={{ headerShown: true }} component={PowerScreen} />
