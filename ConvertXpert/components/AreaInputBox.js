@@ -1,25 +1,23 @@
-import { StyleSheet, Text, View, TouchableOpacity, TextInput, Modal, FlatList, ScrollView } from 'react-native'
+import { StyleSheet, Text, View, TouchableOpacity, TextInput, Modal, ScrollView } from 'react-native'
 import React, { useState } from 'react'
 import { EvilIcons, Entypo } from '@expo/vector-icons'
 
-const LenghtInputBox = ({
+const AreaInputBox = ({
   value,
   valueText,
   style,
   onPress,
   labelData = {},
   onModalMetricUnits,
-  onModalImerialUnits,
-  onModalChineseUnits
+  onModalImerialUnits
 }) => {
   const [modalClicked, setModalClicked] = useState(false);
   // console.log(modalClicked)
 
   // console.log(String(value).length)
   // console.log(labelData)
-  const metricUnits = Object.keys(labelData.metricUnits)
-  const imperialUnits = Object.keys(labelData.imperialUnits)
-  const chineseUnits = Object.keys(labelData.chineseUnits)
+  const metricAreaUnits = Object.keys(labelData.metricAreaUnits)
+  const imperialAreaUnits = Object.keys(labelData.imperialAreaUnits)
 
   return (
     <View>
@@ -48,10 +46,10 @@ const LenghtInputBox = ({
             </TouchableOpacity>
             <ScrollView>
               <View style={styles.viewLabel}>
-                <Text style={{ fontSize: 18, fontWeight: 'bold', fontStyle: 'italic', color: '#fb923c' }}>metricUnits</Text>
+                <Text style={{ fontSize: 18, fontWeight: 'bold', fontStyle: 'italic', color: '#fb923c' }}>metricAreaUnits</Text>
               </View>
               {
-                metricUnits.map((item) => (
+                metricAreaUnits.map((item) => (
                   <TouchableOpacity
                     key={item}
                     style={styles.modalBtn}
@@ -65,32 +63,15 @@ const LenghtInputBox = ({
                 ))
               }
               <View style={styles.viewLabel}>
-                <Text style={{ fontSize: 18, fontWeight: 'bold', fontStyle: 'italic', color: '#fb923c' }}>imperialUnits</Text>
+                <Text style={{ fontSize: 18, fontWeight: 'bold', fontStyle: 'italic', color: '#fb923c' }}>imperialAreaUnits</Text>
               </View>
               {
-                imperialUnits.map((item) => (
+                imperialAreaUnits.map((item) => (
                   <TouchableOpacity
                     key={item}
                     style={styles.modalBtn}
                     onPress={() => {
                       onModalImerialUnits(item)
-                      setModalClicked(!modalClicked)
-                    }}
-                  >
-                    <Text style={styles.textModal}>{item}</Text>
-                  </TouchableOpacity>
-                ))
-              }
-              <View style={styles.viewLabel}>
-                <Text style={{ fontSize: 18, fontWeight: 'bold', fontStyle: 'italic', color: '#fb923c' }}>chineseUnits</Text>
-              </View>
-              {
-                chineseUnits.map((item) => (
-                  <TouchableOpacity
-                    key={item}
-                    style={styles.modalBtn}
-                    onPress={() => {
-                      onModalChineseUnits(item)
                       setModalClicked(!modalClicked)
                     }}
                   >
@@ -106,7 +87,7 @@ const LenghtInputBox = ({
   )
 }
 
-export default LenghtInputBox
+export default AreaInputBox
 
 const styles = StyleSheet.create({
   inputBox: {

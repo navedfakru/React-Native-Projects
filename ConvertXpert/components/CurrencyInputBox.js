@@ -31,6 +31,14 @@ const CurrencyInputBox = ({
         <Text style={styles.amountText}>{currency}</Text>
         <EvilIcons name="chevron-right" size={28} color={'gray'} />
       </TouchableOpacity>
+      <TextInput
+        keyboardType='numeric'
+        style={[styles.amount, { color: className }]}
+        id={ammountInputId}
+        value={amount.toString()}
+        onChangeText={(amount) => onAmountChange && onAmountChange(Number(amount))}
+        editable={!amountDisable}
+      />
       {isClicked && (
         <Modal animationType='slide' transparent={true}>
           <View style={styles.dropdownArea}>
@@ -59,14 +67,6 @@ const CurrencyInputBox = ({
           </View>
         </Modal>
       )}
-      <TextInput
-        keyboardType='numeric'
-        style={[styles.amount, { color: className }]}
-        id={ammountInputId}
-        value={amount.toString()}
-        onChangeText={(amount) => onAmountChange && onAmountChange(Number(amount))}
-        editable={!amountDisable}
-      />
     </View>
   );
 };
@@ -120,6 +120,5 @@ const styles = StyleSheet.create({
   textModal: {
     fontSize: 16,
     fontWeight: '600',
-
   }
 });

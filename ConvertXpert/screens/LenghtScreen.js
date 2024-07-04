@@ -1,7 +1,15 @@
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import React, { act, useEffect, useState } from 'react'
-import { useLenghtConvert, metricUnits, chineseUnits, imperialUnits } from '../hooks/useLength';
+import {StyleSheet, View } from 'react-native'
+import React, {useEffect, useState } from 'react'
+import { useLenghtConvert, unitsText } from '../hooks/useLength';
 import { LenghtInputBox, Button } from '../components';
+
+const units = {
+  ...unitsText.metricUnits,
+  ...unitsText.imperialUnits,
+  ...unitsText.chineseUnits
+}
+
+// console.log(units)
 
 
 const LenghtScreen = () => {
@@ -9,11 +17,19 @@ const LenghtScreen = () => {
   const [from, setFrom] = useState("Kilometer (km)");
   const [to, setTo] = useState("Meter (m)");
   const [value, setValue] = useState(0);
-  const [activeInput, setActiveInput] = useState("from");
+  const [activeInput, setActiveInput] = useState(from);
 
   const handleNumberPress = (buttonValue) => {
     setValue(prevValue => (prevValue === 0 ? buttonValue : prevValue + buttonValue));
   };
+
+  // console.log(useLenghtConvert(1, "pc", "m"))
+
+  const convert = 
+  useLenghtConvert(value, activeInput === from ? units[from] : units[to], activeInput === to ? units[from] : units[to]);
+
+  // console.log(unitsText)
+  // console.log(units)
 
   useEffect(()=> {
     setValue(0)
@@ -26,16 +42,24 @@ const LenghtScreen = () => {
   return (
     <View style={styles.mainContainer}>
       <LenghtInputBox
-        value={value}
+        value={activeInput === from ? value : convert}
         valueText={from}
-        style={activeInput === "from" ? {color: "orange"} : null}
-        onPress={() => setActiveInput("from")}
+        style={activeInput === from ? {color: "orange"} : null}
+        onPress={() => setActiveInput(from)}
+        labelData={unitsText}
+        onModalChineseUnits={(item) => setFrom(item)}
+        onModalImerialUnits={(item) => setFrom(item)}
+        onModalMetricUnits={(item) => setFrom(item)}
       />
       <LenghtInputBox
-        value={value}
+        value={activeInput === to ? value : convert}
         valueText={to}
-        style={activeInput === "to" ? {color: "orange"} : null}
-        onPress={() => setActiveInput("to")}
+        style={activeInput === to ? {color: "orange"} : null}
+        onPress={() => setActiveInput(to)}
+        labelData={unitsText}
+        onModalChineseUnits={(item) => setTo(item)}
+        onModalImerialUnits={(item) => setTo(item)}
+        onModalMetricUnits={(item) => setTo(item)}
       />
       <View style={{ flex: 2 }}>
         <View style={styles.row}>
