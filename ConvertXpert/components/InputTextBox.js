@@ -2,20 +2,22 @@ import { StyleSheet, Text, View, TouchableOpacity, TextInput, Modal, ScrollView 
 import React, { useState } from 'react'
 import { EvilIcons, Entypo } from '@expo/vector-icons'
 
-const TemperatureInputBox = ({
+const InputTextBox = ({
   value,
   valueText,
   style,
   onPress,
   labelData = {},
-  onModalTemperatureUnits,
+  onModalInputText,
+  modalStyle,
+  modalName
 }) => {
   const [modalClicked, setModalClicked] = useState(false);
   // console.log(modalClicked)
 
   // console.log(String(value).length)
   // console.log(labelData)
-  const temperatureUnitsText = Object.keys(labelData)
+  const selectUnit = Object.keys(labelData)
 
   return (
     <View>
@@ -35,7 +37,7 @@ const TemperatureInputBox = ({
       </TouchableOpacity>
       {modalClicked && (
         <Modal animationType='slide' transparent={true}>
-          <View style={styles.modalView}>
+          <View style={[styles.modalView, modalStyle]}>
             <TouchableOpacity
               onPress={() => setModalClicked(false)}
               style={styles.modalClose}
@@ -44,19 +46,19 @@ const TemperatureInputBox = ({
             </TouchableOpacity>
             <ScrollView>
               <View style={styles.viewLabel}>
-                <Text style={{ fontSize: 18, fontWeight: 'bold', fontStyle: 'italic', color: '#fb923c' }}>Temperature Units</Text>
+                <Text style={{ fontSize: 18, fontWeight: 'bold', fontStyle: 'italic', color: '#fb923c' }}>{modalName} Units</Text>
               </View>
               {
-                temperatureUnitsText.map((item) => (
+                selectUnit.map((item) => (
                   <TouchableOpacity
                     key={item}
                     style={styles.modalBtn}
                     onPress={() => {
-                      onModalTemperatureUnits(item)
+                      onModalInputText(item)
                       setModalClicked(!modalClicked)
                     }}
                   >
-                    <Text style={styles.textModal}>{item}</Text>
+                    <Text style={[item.length > 35 ? styles.textModal2 : styles.textModal]}>{item}</Text>
                   </TouchableOpacity>
                 ))
               }
@@ -68,7 +70,7 @@ const TemperatureInputBox = ({
   )
 }
 
-export default TemperatureInputBox
+export default InputTextBox
 
 const styles = StyleSheet.create({
   inputBox: {
@@ -97,7 +99,6 @@ const styles = StyleSheet.create({
   },
   modalView: {
     width: '100%',
-    height: '60%',
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
     marginTop: 10,
@@ -105,7 +106,10 @@ const styles = StyleSheet.create({
     elevation: 10,
     alignSelf: 'center',
     paddingBottom: 50,
-    top: '40%'
+    // height: '70%',
+    // top: '30%'
+    bottom: 0,
+    top: 0
   },
   modalClose: {
     alignItems: 'center',
@@ -126,6 +130,10 @@ const styles = StyleSheet.create({
   },
   textModal: {
     fontSize: 16,
+    fontWeight: '600',
+  },
+  textModal2: {
+    fontSize: 13,
     fontWeight: '600',
   },
   viewLabel: {

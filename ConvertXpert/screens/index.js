@@ -7,7 +7,7 @@ import PressureScreen from './PressureScreen';
 import SpeedScreen from './SpeedScreen';
 import TemperatureScreen from './TemperatureScreen';
 import VolumeScreen from './VolumeScreen';
-import WeightScreen from './WeightScreen'
+import WeightScreen from './WeightScreen';
 
 
 export {AreaScreen, HomeSreen, LenghtScreen, PowerScreen, PressureScreen, SpeedScreen, TemperatureScreen, VolumeScreen, WeightScreen, CurrencyScreen}

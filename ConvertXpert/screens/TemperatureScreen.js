@@ -1,7 +1,7 @@
 import {StyleSheet, View } from 'react-native'
 import React, {useEffect, useState } from 'react'
 import { useTemperatureConvert, temperatureUnitsText } from '../hooks/useTemperature';
-import { TemperatureInputBox, Button } from '../components';
+import { InputTextBox, Button } from '../components';
 
 // console.log(useTemperatureConvert(50, "°C", "°F"))
 // console.log(useTemperatureConvert(50, "°F", "°C"))
@@ -37,21 +37,25 @@ const TemperatureScreen = () => {
 
   return (
     <View style={styles.mainContainer}>
-      <TemperatureInputBox
+      <InputTextBox
         value={activeInput === from ? value : convert()}
         valueText={from}
         style={activeInput === from ? {color: "orange"} : null}
         onPress={() => setActiveInput(from)}
         labelData={temperatureUnitsText}
-        onModalTemperatureUnits={(item) => setFrom(item)}
+        onModalInputText={(item) => setFrom(item)}
+        modalName="Temperature"
+        modalStyle={{height: "60%", top: "40%"}}
       />
-      <TemperatureInputBox
+      <InputTextBox
         value={activeInput === to ? value : convert()}
         valueText={to}
         style={activeInput === to ? {color: "orange"} : null}
         onPress={() => setActiveInput(to)}
         labelData={temperatureUnitsText}
-        onModalTemperatureUnits={(item) => setTo(item)}
+        onModalInputText={(item) => setTo(item)}
+        modalName="Temperature"
+        modalStyle={{height: "60%", top: "40%"}}
       />
       <View style={{ flex: 2 }}>
         <View style={styles.row}>

@@ -4,8 +4,8 @@ import LenghtInputBox from "./LenghtInputBox";
 import AreaInputBox from "./AreaInputBox";
 import VolumeInputBox from "./VolumeInputBox";
 import WeightInputBox from "./WeightInputBox";
-import TemperatureInputBox from "./TemperatureInputBox";
+import InputTextBox from "./InputTextBox";
 
 export {
-  CurrencyInputBox, Button, LenghtInputBox, AreaInputBox, VolumeInputBox, WeightInputBox, TemperatureInputBox
+  CurrencyInputBox, Button, LenghtInputBox, AreaInputBox, VolumeInputBox, WeightInputBox, InputTextBox
 }
