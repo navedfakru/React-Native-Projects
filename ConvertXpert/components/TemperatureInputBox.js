@@ -1,25 +1,21 @@
-import { StyleSheet, Text, View, TouchableOpacity, TextInput, Modal, FlatList, ScrollView } from 'react-native'
+import { StyleSheet, Text, View, TouchableOpacity, TextInput, Modal, ScrollView } from 'react-native'
 import React, { useState } from 'react'
 import { EvilIcons, Entypo } from '@expo/vector-icons'
 
-const LenghtInputBox = ({
+const TemperatureInputBox = ({
   value,
   valueText,
   style,
   onPress,
   labelData = {},
-  onModalMetricUnits,
-  onModalImerialUnits,
-  onModalChineseUnits
+  onModalTemperatureUnits,
 }) => {
   const [modalClicked, setModalClicked] = useState(false);
   // console.log(modalClicked)
 
   // console.log(String(value).length)
   // console.log(labelData)
-  const metricUnits = Object.keys(labelData.metricUnits)
-  const imperialUnits = Object.keys(labelData.imperialUnits)
-  const chineseUnits = Object.keys(labelData.chineseUnits)
+  const temperatureUnitsText = Object.keys(labelData)
 
   return (
     <View>
@@ -38,7 +34,7 @@ const LenghtInputBox = ({
         />
       </TouchableOpacity>
       {modalClicked && (
-        <Modal animationType='slide' transparent={false}>
+        <Modal animationType='slide' transparent={true}>
           <View style={styles.modalView}>
             <TouchableOpacity
               onPress={() => setModalClicked(false)}
@@ -48,49 +44,15 @@ const LenghtInputBox = ({
             </TouchableOpacity>
             <ScrollView>
               <View style={styles.viewLabel}>
-                <Text style={{ fontSize: 18, fontWeight: 'bold', fontStyle: 'italic', color: '#fb923c' }}>Metric Units</Text>
+                <Text style={{ fontSize: 18, fontWeight: 'bold', fontStyle: 'italic', color: '#fb923c' }}>Temperature Units</Text>
               </View>
               {
-                metricUnits.map((item) => (
+                temperatureUnitsText.map((item) => (
                   <TouchableOpacity
                     key={item}
                     style={styles.modalBtn}
                     onPress={() => {
-                      onModalMetricUnits(item)
-                      setModalClicked(!modalClicked)
-                    }}
-                  >
-                    <Text style={styles.textModal}>{item}</Text>
-                  </TouchableOpacity>
-                ))
-              }
-              <View style={styles.viewLabel}>
-                <Text style={{ fontSize: 18, fontWeight: 'bold', fontStyle: 'italic', color: '#fb923c' }}>Imperial Units</Text>
-              </View>
-              {
-                imperialUnits.map((item) => (
-                  <TouchableOpacity
-                    key={item}
-                    style={styles.modalBtn}
-                    onPress={() => {
-                      onModalImerialUnits(item)
-                      setModalClicked(!modalClicked)
-                    }}
-                  >
-                    <Text style={styles.textModal}>{item}</Text>
-                  </TouchableOpacity>
-                ))
-              }
-              <View style={styles.viewLabel}>
-                <Text style={{ fontSize: 18, fontWeight: 'bold', fontStyle: 'italic', color: '#fb923c' }}>Chinese Units</Text>
-              </View>
-              {
-                chineseUnits.map((item) => (
-                  <TouchableOpacity
-                    key={item}
-                    style={styles.modalBtn}
-                    onPress={() => {
-                      onModalChineseUnits(item)
+                      onModalTemperatureUnits(item)
                       setModalClicked(!modalClicked)
                     }}
                   >
@@ -106,7 +68,7 @@ const LenghtInputBox = ({
   )
 }
 
-export default LenghtInputBox
+export default TemperatureInputBox
 
 const styles = StyleSheet.create({
   inputBox: {
@@ -135,7 +97,7 @@ const styles = StyleSheet.create({
   },
   modalView: {
     width: '100%',
-    height: '100%',
+    height: '60%',
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
     marginTop: 10,
@@ -143,6 +105,7 @@ const styles = StyleSheet.create({
     elevation: 10,
     alignSelf: 'center',
     paddingBottom: 50,
+    top: '40%'
   },
   modalClose: {
     alignItems: 'center',

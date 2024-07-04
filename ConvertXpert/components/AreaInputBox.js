@@ -46,7 +46,7 @@ const AreaInputBox = ({
             </TouchableOpacity>
             <ScrollView>
               <View style={styles.viewLabel}>
-                <Text style={{ fontSize: 18, fontWeight: 'bold', fontStyle: 'italic', color: '#fb923c' }}>metricAreaUnits</Text>
+                <Text style={{ fontSize: 18, fontWeight: 'bold', fontStyle: 'italic', color: '#fb923c' }}>Metric Area Units</Text>
               </View>
               {
                 metricAreaUnits.map((item) => (
@@ -63,7 +63,7 @@ const AreaInputBox = ({
                 ))
               }
               <View style={styles.viewLabel}>
-                <Text style={{ fontSize: 18, fontWeight: 'bold', fontStyle: 'italic', color: '#fb923c' }}>imperialAreaUnits</Text>
+                <Text style={{ fontSize: 18, fontWeight: 'bold', fontStyle: 'italic', color: '#fb923c' }}>Imperial Area Units</Text>
               </View>
               {
                 imperialAreaUnits.map((item) => (
