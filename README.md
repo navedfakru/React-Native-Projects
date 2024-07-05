@@ -1,6 +1,6 @@
 # React Native Projects
 
-## 01 Components
+## 01 Components.
 * **Profile Cards:** Display user information such as name, email, date of birth, address, phone number, and other details.
 * **Navigation:** Navigate between different user profiles.
 * **Styling:** Utilizes `nativewind` and `tailwind CSS` for responsive and attractive UI.
@@ -22,6 +22,16 @@
 <img src="./assets_file/Signup1.jpg" width=30%>
 <img src="./assets_file/Signup2.jpg" width=30%>
 <img src="./assets_file/Signup3.jpg" width=30%>
+</div>
+
+## 03 PasswordGenrator.
+-- React native, Modal
+-- React.js useEffect, useRef, useCallback useState
+
+<div style="display: flex; flex-direction: 'row';">
+<img src="./assets_file/passwordgenerator1.jpg" width=30%>
+<img src="./assets_file/passwordgenerator2.jpg" width=30%>
+<img src="./assets_file/passwordgenerator3.jpg" width=30%>
 </div>
 
 ## Download apk file
