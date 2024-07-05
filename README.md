@@ -25,8 +25,11 @@
 </div>
 
 ## 03 PasswordGenrator.
--- React native, Modal
--- React.js useEffect, useRef, useCallback useState
+### _Features_
+* **Password Generation:** Generate random passwords with customizable length.
+* **Copy to Clipboard:** Easily copy the generated password to the clipboard.
+* **Options for Complexity:** Include numbers and special characters in the password.
+* **React Concepts:** Utilizes `useState`, `useEffect`, `useCallback`, and `useRef` hooks from React.
 
 <div style="display: flex; flex-direction: 'row';">
 <img src="./assets_file/passwordgenerator1.png" width=30%>
