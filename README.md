@@ -29,9 +29,9 @@
 -- React.js useEffect, useRef, useCallback useState
 
 <div style="display: flex; flex-direction: 'row';">
-<img src="./assets_file/passwordgenerator1.jpg" width=30%>
-<img src="./assets_file/passwordgenerator2.jpg" width=30%>
-<img src="./assets_file/passwordgenerator3.jpg" width=30%>
+<img src="./assets_file/passwordgenerator1.png" width=30%>
+<img src="./assets_file/passwordgenerator2.png" width=30%>
+<img src="./assets_file/passwordgenerator3.png" width=30%>
 </div>
 
 ## Download apk file
