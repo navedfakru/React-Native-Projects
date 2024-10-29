@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, TextInput, Pressable } from 'react-native';
+import { View, Text, StyleSheet, TextInput, Pressable, ScrollView } from 'react-native';
 import React, { useState } from 'react';
 import MarkdownDisplay from './components/MarkdownDisplay';
 
@@ -49,11 +49,11 @@ Markdown is not just for formatting; it's for having fun while expressing yourse
 
 const EditorScreen = () => {
   const [content, setContent] = useState(template);
-  console.log(content)
+  // console.log(content)
   const [tab, setTab] = useState('edit');
 
   return (
-    <View style={styles.page}>
+    <ScrollView style={styles.page}>
       <View style={styles.tabsContainer}>
         <Pressable
           onPress={() => setTab('edit')}
@@ -76,17 +76,19 @@ const EditorScreen = () => {
       </View>
 
       {tab === 'edit' ? (
-        <TextInput
-          value={content}
-          onChangeText={setContent}
-          multiline
-          numberOfLines={50}
-          style={styles.input}
-        />
+          <View style={{paddingBottom: 40}}>
+            <TextInput
+            value={content}
+            onChangeText={setContent}
+            multiline
+            numberOfLines={50}
+            style={styles.input}
+          />
+          </View>
       ) : (
         <MarkdownDisplay>{content}</MarkdownDisplay>
       )}
-    </View>
+    </ScrollView>
   );
 };
 
