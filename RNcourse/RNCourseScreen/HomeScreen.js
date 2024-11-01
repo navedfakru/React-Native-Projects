@@ -61,6 +61,15 @@ const HomeScreen = ({navigation}) => {
             Class Component
           </Text>
         </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.btn}
+          activeOpacity={0.6}
+          onPress={() => navigation.navigate('lifecyle')}
+        >
+          <Text style={styles.btnText}>
+            useEffect, useState, LifeCycle
+          </Text>
+        </TouchableOpacity>
       </ScrollView>
     </LinearGradient>
   )

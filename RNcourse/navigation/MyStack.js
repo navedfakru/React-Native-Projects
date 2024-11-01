@@ -14,7 +14,7 @@ const MyStack = () => {
 
   return (
     <Stack.Navigator>
-      <Stack.Screen name="home" component={LifeCycle} options={{headerShown: false}} />
+      <Stack.Screen name="home" component={HomeScreen} options={{headerShown: false}} />
       <Stack.Screen name="lifecyle" component={LifeCycle} options={{
         headerBackground: () => (
           <LinearGradient

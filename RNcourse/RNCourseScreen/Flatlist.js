@@ -150,6 +150,8 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     color: "white",
   },
+
+  // modalcss
   showcodebtn: {
     height: 60,
     backgroundColor: "rgba(0, 0, 255, 0.5)",
