@@ -88,6 +88,24 @@ const HomeScreen = ({navigation}) => {
             TouchableHighlight
           </Text>
         </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.btn}
+          activeOpacity={0.6}
+          onPress={() => navigation.navigate('radiobutton')}
+        >
+          <Text style={styles.btnText}>
+            RadioButton
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.btn}
+          activeOpacity={0.6}
+          onPress={() => navigation.navigate('quizapp')}
+        >
+          <Text style={styles.btnText}>
+            Quiz App
+          </Text>
+        </TouchableOpacity>
       </ScrollView>
     </LinearGradient>
   )

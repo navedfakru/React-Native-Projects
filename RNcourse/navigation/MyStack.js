@@ -1,5 +1,5 @@
 import { createStackNavigator } from "@react-navigation/stack";
-import { ClassComponent, FlatlistApp, flexUi, HomeScreen, Input, LifeCycle, MappListViewApp, RadioButton, RNSectionList, TouchableButton } from "../RNCourseScreen";
+import { ClassComponent, FlatlistApp, flexUi, HomeScreen, Input, LifeCycle, MappListViewApp, QuizApp, RadioButton, RNSectionList, TouchableButton } from "../RNCourseScreen";
 import { LinearGradient } from "expo-linear-gradient";
 import {MaterialIcons} from '@expo/vector-icons';
 import { StyleSheet, TouchableOpacity } from "react-native";
@@ -14,7 +14,24 @@ const MyStack = () => {
 
   return (
     <Stack.Navigator>
-      <Stack.Screen name="home" component={RadioButton} options={{headerShown: false}} />
+      <Stack.Screen name="home" component={HomeScreen} options={{headerShown: false}} />
+      <Stack.Screen name="quizapp" component={QuizApp} options={{
+        headerBackground: () => (
+          <LinearGradient
+            colors={['#b3e5fc', '#e1bee7', '#ffffff']}
+            style={{ flex: 1 }}
+            start={[0, 0]}
+            end={[1, 1]}
+          />
+        ),
+        headerTitle: "Quiz App",
+        headerTitleAlign: 'center',
+        headerLeft: () => (
+          <TouchableOpacity style={styles.iconContainer} onPress={() => navigation.goBack()}>
+            <MaterialIcons name="arrow-back-ios-new" size={24} color="black" />
+          </TouchableOpacity>
+        ),
+      }} />
       <Stack.Screen name="radiobutton" component={RadioButton} options={{
         headerBackground: () => (
           <LinearGradient

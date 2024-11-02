@@ -8,6 +8,7 @@ import LifeCycle from "./LifeCycle";
 import flexUi from "./FlexUI";
 import TouchableButton from "./TouchableButton";
 import RadioButton from "./RadioButton";
+import QuizApp from "./QuizApp";
 
 
-export {HomeScreen, FlatlistApp, Input, MappListViewApp, RNSectionList, ClassComponent, LifeCycle, flexUi, TouchableButton, RadioButton}
+export {HomeScreen, FlatlistApp, Input, MappListViewApp, RNSectionList, ClassComponent, LifeCycle, flexUi, TouchableButton, RadioButton, QuizApp}
