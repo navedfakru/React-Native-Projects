@@ -1,5 +1,5 @@
 import { createStackNavigator } from "@react-navigation/stack";
-import { ClassComponent, FlatlistApp, HomeScreen, Input, LifeCycle, MappListViewApp, RNSectionList } from "../RNCourseScreen";
+import { ClassComponent, FlatlistApp, flexUi, HomeScreen, Input, LifeCycle, MappListViewApp, RadioButton, RNSectionList, TouchableButton } from "../RNCourseScreen";
 import { LinearGradient } from "expo-linear-gradient";
 import {MaterialIcons} from '@expo/vector-icons';
 import { StyleSheet, TouchableOpacity } from "react-native";
@@ -14,7 +14,58 @@ const MyStack = () => {
 
   return (
     <Stack.Navigator>
-      <Stack.Screen name="home" component={HomeScreen} options={{headerShown: false}} />
+      <Stack.Screen name="home" component={RadioButton} options={{headerShown: false}} />
+      <Stack.Screen name="radiobutton" component={RadioButton} options={{
+        headerBackground: () => (
+          <LinearGradient
+            colors={['#b3e5fc', '#e1bee7', '#ffffff']}
+            style={{ flex: 1 }}
+            start={[0, 0]}
+            end={[1, 1]}
+          />
+        ),
+        headerTitle: "Radio Button",
+        headerTitleAlign: 'center',
+        headerLeft: () => (
+          <TouchableOpacity style={styles.iconContainer} onPress={() => navigation.goBack()}>
+            <MaterialIcons name="arrow-back-ios-new" size={24} color="black" />
+          </TouchableOpacity>
+        ),
+      }} />
+      <Stack.Screen name="touchablehighlight" component={TouchableButton} options={{
+        headerBackground: () => (
+          <LinearGradient
+            colors={['#b3e5fc', '#e1bee7', '#ffffff']}
+            style={{ flex: 1 }}
+            start={[0, 0]}
+            end={[1, 1]}
+          />
+        ),
+        headerTitle: "TouchableHighlight",
+        headerTitleAlign: 'center',
+        headerLeft: () => (
+          <TouchableOpacity style={styles.iconContainer} onPress={() => navigation.goBack()}>
+            <MaterialIcons name="arrow-back-ios-new" size={24} color="black" />
+          </TouchableOpacity>
+        ),
+      }} />
+      <Stack.Screen name="flexUi" component={flexUi} options={{
+        headerBackground: () => (
+          <LinearGradient
+            colors={['#b3e5fc', '#e1bee7', '#ffffff']}
+            style={{ flex: 1 }}
+            start={[0, 0]}
+            end={[1, 1]}
+          />
+        ),
+        headerTitle: "Flex UI Flex Box",
+        headerTitleAlign: 'center',
+        headerLeft: () => (
+          <TouchableOpacity style={styles.iconContainer} onPress={() => navigation.goBack()}>
+            <MaterialIcons name="arrow-back-ios-new" size={24} color="black" />
+          </TouchableOpacity>
+        ),
+      }} />
       <Stack.Screen name="lifecyle" component={LifeCycle} options={{
         headerBackground: () => (
           <LinearGradient
@@ -24,7 +75,7 @@ const MyStack = () => {
             end={[1, 1]}
           />
         ),
-        headerTitle: "Class Component",
+        headerTitle: "useEffect useState LifeCyle",
         headerTitleAlign: 'center',
         headerLeft: () => (
           <TouchableOpacity style={styles.iconContainer} onPress={() => navigation.goBack()}>

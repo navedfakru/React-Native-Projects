@@ -70,6 +70,24 @@ const HomeScreen = ({navigation}) => {
             useEffect, useState, LifeCycle
           </Text>
         </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.btn}
+          activeOpacity={0.6}
+          onPress={() => navigation.navigate('flexUi')}
+        >
+          <Text style={styles.btnText}>
+            Flex UI Flex Box
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.btn}
+          activeOpacity={0.6}
+          onPress={() => navigation.navigate('touchablehighlight')}
+        >
+          <Text style={styles.btnText}>
+            TouchableHighlight
+          </Text>
+        </TouchableOpacity>
       </ScrollView>
     </LinearGradient>
   )
