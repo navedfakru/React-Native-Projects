@@ -1,5 +1,5 @@
 import { createStackNavigator } from "@react-navigation/stack";
-import { ClassComponent, FlatlistApp, flexUi, HomeScreen, Indicator, Input, LifeCycle, MappListViewApp, QuizApp, RadioButton, RNSectionList, TouchableButton } from "../RNCourseScreen";
+import { ClassComponent, CustomModal, FlatlistApp, flexUi, HomeScreen, Indicator, Input, LifeCycle, MappListViewApp, QuizApp, RadioButton, RNSectionList, TouchableButton } from "../RNCourseScreen";
 import { LinearGradient } from "expo-linear-gradient";
 import {MaterialIcons} from '@expo/vector-icons';
 import { StyleSheet, TouchableOpacity } from "react-native";
@@ -14,7 +14,7 @@ const MyStack = () => {
 
   return (
     <Stack.Navigator>
-      <Stack.Screen name="home" component={HomeScreen} options={{headerShown: false}} />
+      <Stack.Screen name="home" component={CustomModal} options={{headerShown: false}} />
       <Stack.Screen name="indicator" component={Indicator} options={{
         headerBackground: () => (
           <LinearGradient

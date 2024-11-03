@@ -10,6 +10,7 @@ import TouchableButton from "./TouchableButton";
 import RadioButton from "./RadioButton";
 import QuizApp from "./QuizApp";
 import Indicator from "./Indicator";
+import CustomModal from "./CustomModal";
 
 
-export {HomeScreen, FlatlistApp, Input, MappListViewApp, RNSectionList, ClassComponent, LifeCycle, flexUi, TouchableButton, RadioButton, QuizApp, Indicator}
+export {HomeScreen, FlatlistApp, Input, MappListViewApp, RNSectionList, ClassComponent, LifeCycle, flexUi, TouchableButton, RadioButton, QuizApp, Indicator, CustomModal}
