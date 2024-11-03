@@ -11,6 +11,7 @@ import RadioButton from "./RadioButton";
 import QuizApp from "./QuizApp";
 import Indicator from "./Indicator";
 import CustomModal from "./CustomModal";
+import App from "./navigation/App";
 
 
-export {HomeScreen, FlatlistApp, Input, MappListViewApp, RNSectionList, ClassComponent, LifeCycle, flexUi, TouchableButton, RadioButton, QuizApp, Indicator, CustomModal}
+export {HomeScreen, FlatlistApp, Input, MappListViewApp, RNSectionList, ClassComponent, LifeCycle, flexUi, TouchableButton, RadioButton, QuizApp, Indicator, CustomModal, App}
