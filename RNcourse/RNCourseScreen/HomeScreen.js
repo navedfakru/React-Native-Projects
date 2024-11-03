@@ -106,6 +106,15 @@ const HomeScreen = ({navigation}) => {
             Quiz App
           </Text>
         </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.btn}
+          activeOpacity={0.6}
+          onPress={() => navigation.navigate('indicator')}
+        >
+          <Text style={styles.btnText}>
+            ActivityIndicator
+          </Text>
+        </TouchableOpacity>
       </ScrollView>
     </LinearGradient>
   )

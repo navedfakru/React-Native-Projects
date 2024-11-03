@@ -9,7 +9,6 @@ import {
 } from "react-native";
 import React, { useState } from "react";
 import { MaterialCommunityIcons, Entypo } from "@expo/vector-icons";
-import { MarkdownDisplay, modalStyles } from "../components";
 import ModalDisplay from "../components/ModalDisplay";
 
 const quizQuestions = [

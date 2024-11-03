@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View, Pressable, Modal } from 'react-native';
 import React, { useState } from 'react';
-import { modalStyles, MarkdownDisplay } from './index';
+import modalStyles from './Modal.Style';
+import MarkdownDisplay from './MarkdownDisplay';
 
 const ModalDisplay = ({code}) => {
   const [visibleModal, setVisibleModal] = useState(false);
