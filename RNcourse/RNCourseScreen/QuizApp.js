@@ -10,6 +10,7 @@ import {
 import React, { useState } from "react";
 import { MaterialCommunityIcons, Entypo } from "@expo/vector-icons";
 import { MarkdownDisplay, modalStyles } from "../components";
+import ModalDisplay from "../components/ModalDisplay";
 
 const quizQuestions = [
   {
@@ -160,38 +161,7 @@ const QuizApp = () => {
           </View>
         ))}
       </View>
-      <View style={
-        {
-          width: '100%',
-        }}>
-        <Pressable
-          style={[modalStyles.showcodebtn]}
-          onPress={() => setVisibleModal(true)}
-        >
-          <Text style={modalStyles.showcodeText}>Show Code</Text>
-        </Pressable>
-      </View>
-      <Modal visible={visibleModal} transparent={true}>
-        <View style={modalStyles.modalView}>
-          <Pressable
-            style={[
-              modalStyles.showcodebtn,
-              {
-                width: "100%",
-                backgroundColor: "rgba(255, 0, 0, 0.7)",
-                borderRadius: 0,
-                margin: 0,
-                borderTopLeftRadius: 20,
-                borderTopRightRadius: 20,
-              },
-            ]}
-            onPress={() => setVisibleModal(false)}
-          >
-            <Text style={[modalStyles.showcodeText]}>Close Code</Text>
-          </Pressable>
-          <MarkdownDisplay>{code}</MarkdownDisplay>
-        </View>
-      </Modal>
+      <ModalDisplay code={code} />
     </ScrollView>
   );
 };
