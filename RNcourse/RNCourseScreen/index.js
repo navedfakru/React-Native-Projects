@@ -12,6 +12,7 @@ import QuizApp from "./QuizApp";
 import Indicator from "./Indicator";
 import CustomModal from "./CustomModal";
 import App from "./navigation/App";
+import NavigationApp from "./tabnavigation/NavigationApp";
 
 
-export {HomeScreen, FlatlistApp, Input, MappListViewApp, RNSectionList, ClassComponent, LifeCycle, flexUi, TouchableButton, RadioButton, QuizApp, Indicator, CustomModal, App}
+export {HomeScreen, FlatlistApp, Input, MappListViewApp, RNSectionList, ClassComponent, LifeCycle, flexUi, TouchableButton, RadioButton, QuizApp, Indicator, CustomModal, App, NavigationApp}

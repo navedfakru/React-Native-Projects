@@ -1,5 +1,5 @@
 import { createStackNavigator } from "@react-navigation/stack";
-import { App, ClassComponent, CustomModal, FlatlistApp, flexUi, HomeScreen, Indicator, Input, LifeCycle, MappListViewApp, QuizApp, RadioButton, RNSectionList, TouchableButton } from "../RNCourseScreen";
+import { App, ClassComponent, CustomModal, FlatlistApp, flexUi, HomeScreen, Indicator, Input, LifeCycle, MappListViewApp, NavigationApp, QuizApp, RadioButton, RNSectionList, TouchableButton } from "../RNCourseScreen";
 import { LinearGradient } from "expo-linear-gradient";
 import {MaterialIcons} from '@expo/vector-icons';
 import { StyleSheet, TouchableOpacity } from "react-native";
@@ -14,8 +14,8 @@ const MyStack = () => {
 
   return (
     <Stack.Navigator>
-      <Stack.Screen name="home" component={App} options={{headerShown: false}} />
-      <Stack.Screen name="navigation" component={App} options={{
+      <Stack.Screen name="home" component={HomeScreen} options={{headerShown: false}} />
+      <Stack.Screen name="navigationapp" component={NavigationApp} options={{ headerShown: false,
         headerBackground: () => (
           <LinearGradient
             colors={['#b3e5fc', '#e1bee7', '#ffffff']}
@@ -24,7 +24,24 @@ const MyStack = () => {
             end={[1, 1]}
           />
         ),
-        headerTitle: "ActivityIndicator",
+        headerTitle: "Stack Navigation",
+        headerTitleAlign: 'center',
+        headerLeft: () => (
+          <TouchableOpacity style={styles.iconContainer} onPress={() => navigation.goBack()}>
+            <MaterialIcons name="arrow-back-ios-new" size={24} color="black" />
+          </TouchableOpacity>
+        ),
+      }} />
+      <Stack.Screen name="navigation" component={App} options={{ headerShown: false,
+        headerBackground: () => (
+          <LinearGradient
+            colors={['#b3e5fc', '#e1bee7', '#ffffff']}
+            style={{ flex: 1 }}
+            start={[0, 0]}
+            end={[1, 1]}
+          />
+        ),
+        headerTitle: "Stack Navigation",
         headerTitleAlign: 'center',
         headerLeft: () => (
           <TouchableOpacity style={styles.iconContainer} onPress={() => navigation.goBack()}>

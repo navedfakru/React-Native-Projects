@@ -115,6 +115,24 @@ const HomeScreen = ({navigation}) => {
             ActivityIndicator
           </Text>
         </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.btn}
+          activeOpacity={0.6}
+          onPress={() => navigation.navigate('navigation')}
+        >
+          <Text style={styles.btnText}>
+            Stack Navigation
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.btn}
+          activeOpacity={0.6}
+          onPress={() => navigation.navigate('navigationapp')}
+        >
+          <Text style={styles.btnText}>
+            Tab Navigation
+          </Text>
+        </TouchableOpacity>
       </ScrollView>
     </LinearGradient>
   )
