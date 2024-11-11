@@ -1,20 +1,33 @@
-import { StatusBar } from 'expo-status-bar';
+import { useEffect, useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { useSelector } from 'react-redux';
 
 export default function Header() {
+  const [itemCart, setItemCart] = useState(0)
+  const storeitem = useSelector((state)=> state.reducer)
+  useEffect(() => {
+    setItemCart(storeitem.length)
+  }, [storeitem])
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <Text style={{
+        fontSize: 30,
+        color: 'white',
+        fontWeight: 'bold',
+        paddingHorizontal: 20,
+        borderWidth: 1,
+        borderRadius: 10,
+        backgroundColor: 'rgba(0, 0, 0, 0.5)'
+      }}>{itemCart}</Text>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    paddingTop: 40,
+    alignItems: 'flex-end',
+    padding: 10,
+    backgroundColor: 'rgba(0, 0, 255, 0.3)'
   },
 });

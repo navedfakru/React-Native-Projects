@@ -48,12 +48,6 @@ export const products = [
 "thumbnail": "https://cdn.dummyjson.com/products/images/groceries/Cat%20Food/thumbnail.png"
 },
 {
-"id": 19,
-"title": "Chicken Meat",
-"price": 9.99,
-"thumbnail": "https://cdn.dummyjson.com/products/images/groceries/Chicken%20Meat/thumbnail.png"
-},
-{
 "id": 20,
 "title": "Cooking Oil",
 "price": 4.99,
